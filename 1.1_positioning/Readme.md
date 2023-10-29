@@ -2,10 +2,10 @@
 ## Позиционирование элементов
 ### Задание 1
 Файлы:
-- main.qml;
+- **main.qml**;
 - компоненты:
-- - Border_square.qml,
-  - Fill_square.qml,
-  - Heart.qml,
-  - Heart_pattern.qml.
+- - **Border_square.qml** красный квадрат,
+  - **Fill_square.qml** белый квадрат,
+  - **Heart.qml** одно сердце из квадратов,
+  - **Heart_pattern.qml** несколько сердец.
     
