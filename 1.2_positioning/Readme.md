@@ -129,3 +129,7 @@ Window
 }
 
 ```
+![2023-10-29_20-38-00](https://github.com/AnastasiaKedrina/QML/assets/113825953/0f09db94-f0db-431f-9446-1a0067cbd88b)
+![2023-10-29_20-38-22](https://github.com/AnastasiaKedrina/QML/assets/113825953/5af23012-f6cf-48cb-b479-db8811f4a1ac)
+
+
