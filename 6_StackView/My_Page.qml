@@ -9,9 +9,22 @@ Page{
     property alias buttonText_2:button_nav_2.text
     signal buttonClicked_1();
     signal buttonClicked_2();
+    signal buttonClicked_back();
     background: Rectangle{
         id:back_fon
     }
+    Button {
+        id:button_back
+        anchors.top: parent.top
+        anchors.left: parent.left
+        visible:stack_view.depth>1
+        anchors.margins: defMargin // look into main.qml
+        text:"<--"
+        onClicked: {
+            root.buttonClicked_back()
+        }
+    }
+
     Button {
         id:button_nav_1
         anchors.right: parent.right
