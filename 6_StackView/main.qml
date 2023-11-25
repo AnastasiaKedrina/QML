@@ -41,6 +41,10 @@ Window {
         onButtonClicked_2: {
             stack_view.push(page3)
         }
+        onButtonClicked_back: {
+            stack_view.pop(page1)
+
+        }
     }
     My_Page {
         id:page3
@@ -52,6 +56,9 @@ Window {
             stack_view.pop(page1)
         }
         onButtonClicked_2: {
+            stack_view.pop(page2)
+        }
+        onButtonClicked_back: {
             stack_view.pop(page2)
         }
     }
