@@ -1,6 +1,10 @@
 ### QML_7. Стандартные элементы интерфейса
 
-https://github.com/AnastasiaKedrina/QML/assets/113825953/0ca7770c-c658-486c-95d7-0d00c40f2480
+
+
+https://github.com/AnastasiaKedrina/QML/assets/113825953/0e7c04e1-9d31-48d6-9435-439b8c7c4dd9
+
+
 
 ```
 import QtQuick 2.15
@@ -25,46 +29,139 @@ Window {
         color:"#F0F0F0"
         Rectangle{
             anchors.centerIn:parent
-            width: parent.width - 100
-            height: 150
+            width: parent.width-50
+            height: parent.height-180
             color:parent.color
             ColumnLayout{
                 anchors.fill:parent
-                TextField {
-                    id: usernameField
-                    Layout.fillWidth: true
-                    placeholderText: "Username"
+                spacing: 20
+                Text {
+                    text: "Enter your password:"
                     font.pixelSize: 16
+                    Layout.alignment: Qt.AlignCenter
                 }
-                TextField {
+                Text{
                     id: passwordField
-                    Layout.fillWidth: true
-                    placeholderText: "Password"
-                    font.pixelSize: 16
-                    echoMode: TextInput.Password
+                    text: passwordField.text
+                    color:background.color
+                    visible: false
                 }
-                RowLayout {
-                    Button {
-                        Layout.fillWidth: true
-                        text: "Log in"
-                        onClicked: model.submit()
-                        background: Rectangle {
-                            color: parent.down ? "#bbbbbb" :
-                                                 (parent.hovered ? "#d6d6d6" : "#C7C7C7")
+                Rectangle {
+                    id: passwordField1
+                    color: "white"
+                    border.width: 2
+                    border.color: "black"
+                    width: parent.width
+                    height: 50
+                    Layout.alignment: Qt.AlignCenter
+                    Row {
+                        spacing: 6
+                        anchors.centerIn: parent
+                        // Добавляем 6 элементов Label для отображения введенных символов
+                        Repeater {
+                            model:6
+                            Label {
+                                width: 20
+                                height: 20
+                                font.pixelSize: 36
+                                text: "*"
+                                Layout.alignment: Qt.AlignCenter
+                                color:index <passwordField.text.length ? "black" : "light grey"
+                            }
                         }
                     }
+                }
+
+                GridLayout {
+                    id: keypad
+                    rows: 4
+                    columns: 3
                     Button {
+                        text: "1"
+                        onClicked: passwordField.text += "1"
+                        Layout.fillHeight: true
                         Layout.fillWidth: true
+                    }
+                    Button {
+                        text: "2"
+                        onClicked: passwordField.text+= "2"
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: "3"
+                        onClicked: passwordField.text+= "3"
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: "4"
+                        onClicked: passwordField.text+= "4"
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: "5"
+                        onClicked: passwordField.text+= "5"
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: "6"
+                        onClicked: passwordField.text+= "6"
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: "7"
+                        onClicked: passwordField.text+= "7"
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: "8"
+                        onClicked: passwordField.text+= "8"
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: "9"
+                        onClicked: passwordField.text+= "9"
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: ""
+                        onClicked: passwordField.text+= ""
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: "0"
+                        onClicked: passwordField.text+= "0"
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                    }
+                    Button {
                         text: "Clear"
-                        onClicked: {usernameField.clear(); passwordField.clear()}
-                        background: Rectangle {
-                            color: parent.down ? "#bbbbbb" :
-                                                 (parent.hovered ? "#d6d6d6" : background.color)
-                        }
+                        onClicked: passwordField.text= ""
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
                     }
+                }
+                Button {
+                    Layout.fillWidth: true
+                    text: "Log In"
+                    onClicked: model.submit()
+                    background: Rectangle {
+                        color: parent.down ? "#bbbbbb" :
+                                             (parent.hovered ? "#B5B5B5" : "#C7C7C7")
+                    }
+
                 }
             }
         }
     }
 }
+
 ```
